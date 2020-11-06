@@ -1,0 +1,28 @@
+sudo tee -a /etc/apt/sources.list<<EOF
+deb http://http.kali.org/kali kali-rolling main non-free contrib
+deb-src http://http.kali.org/kali kali-rolling main non-free contrib
+EOF
+apt-get -y update 
+
+apt-get -y install kali-linux-everything
+apt-get -y install git
+#install lazy script to run type l
+git clone https://github.com/arismelachroinos/lscript.git
+cd lscript
+chmod +x install.sh
+./install.sh
+cd ..
+git clone https://www.github.com/FluxionNetwork/fluxion.git
+cd fluxion 
+./fluxion.sh
+apt-get -y upgrade
+
+
+# clone the repo
+git clone https://github.com/sherlock-project/sherlock.git
+
+# change the working directory to sherlock
+cd sherlock
+
+# install the requirements
+python3 -m pip install -r requirements.txt
