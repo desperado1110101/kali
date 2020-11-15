@@ -4,7 +4,7 @@ deb-src http://http.kali.org/kali kali-rolling main non-free contrib
 EOF
 apt-get -y update 
 
-apt-get -y install kali-linux-everything
+#apt-get -y install kali-linux-everything
 apt-get -y install git
 #install lazy script to run type l
 git clone https://github.com/arismelachroinos/lscript.git
@@ -16,6 +16,7 @@ git clone https://www.github.com/FluxionNetwork/fluxion.git
 cd fluxion 
 ./fluxion.sh
 apt-get -y upgrade
+cd ..
 
 
 # clone the repo
@@ -26,3 +27,9 @@ cd sherlock
 
 # install the requirements
 python3 -m pip install -r requirements.txt
+cd ..
+
+ git clone https://github.com/P0cL4bs/WiFi-Pumpkin.git
+ cd WiFi-Pumpkin
+ ./installer.sh --install
+ cd ..
