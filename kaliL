@@ -2,7 +2,12 @@ sudo tee -a /etc/apt/sources.list<<EOF
 deb http://http.kali.org/kali kali-rolling main non-free contrib
 deb-src http://http.kali.org/kali kali-rolling main non-free contrib
 EOF
-apt-get -y update 
+
+sudo tee -a /boot/config.txt<<EOF
+lcd_rotate=2
+EOF
+
+#apt-get -y update 
 
 #apt-get -y install kali-linux-everything
 apt-get -y install git
@@ -15,7 +20,7 @@ cd ..
 git clone https://www.github.com/FluxionNetwork/fluxion.git
 cd fluxion 
 ./fluxion.sh
-apt-get -y upgrade
+#apt-get -y upgrade
 cd ..
 
 
